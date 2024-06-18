@@ -1,0 +1,81 @@
+PDDL (Planning Domain Definition Language) è un linguaggio usato per rappresentare domini e problemi di pianificazione automatica. I **requirements** (requisiti) in PDDL specificano quali caratteristiche e capacità devono essere supportate da un pianificatore per risolvere un determinato problema. Ecco una spiegazione dettagliata dei vari requirements di PDDL:
+
+### STRIPS
+**STRIPS (Stanford Research Institute Problem Solver)** è il requisito di base in PDDL e rappresenta il modello classico di azioni di pianificazione. In STRIPS, ogni azione è definita da:
+- **Precondizioni:** Un insieme di condizioni che devono essere vere affinché l'azione possa essere eseguita.
+- **Effetti additivi:** Un insieme di condizioni che saranno rese vere dall'esecuzione dell'azione.
+- **Effetti negativi:** Un insieme di condizioni che saranno rese false dall'esecuzione dell'azione.
+
+### Typing
+**Typing** permette di dichiarare tipi per oggetti, migliorando l'espressività e la gestione del dominio. Ad esempio, si possono definire diversi tipi di oggetti come `persona`, `veicolo`, ecc., e le azioni possono essere specificate per operare solo su certi tipi di oggetti.
+
+### Disjunctive Preconditions
+**Disjunctive Preconditions** consentono di specificare precondizioni come disgiunzioni logiche (OR) di più condizioni. Ad esempio, un'azione può essere eseguibile se almeno una tra diverse condizioni è vera.
+
+### Equality
+**Equality** permette l'uso dell'uguaglianza (`=`) nelle precondizioni per verificare se due termini sono uguali o diversi.
+
+### Existential Preconditions
+**Existential Preconditions** permettono di specificare che esiste almeno un oggetto che soddisfa una certa condizione per poter eseguire un'azione. Ad esempio, l'azione `prendi` potrebbe richiedere che esista almeno un oggetto da prendere.
+
+### Universal Preconditions
+**Universal Preconditions** richiedono che tutte le istanze di un certo tipo soddisfino una certa condizione per poter eseguire un'azione. Questo è espresso usando quantificatori universali (`forall`).
+
+### Quantified Preconditions
+**Quantified Preconditions** combinano precondizioni esistenziali e universali, permettendo l'uso di quantificatori (`exists` e `forall`) per esprimere condizioni più complesse.
+
+### Conditional Effects
+**Conditional Effects** permettono di specificare effetti di un'azione che sono condizionali sullo stato corrente. Ad esempio, un'azione potrebbe avere un effetto solo se una certa condizione è vera al momento dell'esecuzione.
+
+### Action Expansions
+**Action Expansions** permettono di definire azioni in termini di sequenze di altre azioni, spesso utilizzate per decomporre azioni complesse in azioni più semplici.
+
+### Foreach Expansions
+**Foreach Expansions** permettono di applicare un'azione a tutti gli oggetti di un certo tipo o che soddisfano una certa condizione.
+
+### DAG Expansions
+**DAG Expansions (Directed Acyclic Graph Expansions)** permettono di rappresentare azioni come grafi aciclici diretti, supportando decomposizioni complesse di azioni.
+
+### Domain Axioms
+**Domain Axioms** sono regole logiche che descrivono invarianti e altre proprietà del dominio, utilizzate per inferire informazioni aggiuntive durante la pianificazione.
+
+### Subgoals Through Axioms
+**Subgoals Through Axioms** permette l'uso di assiomi per generare sotto-obiettivi durante la pianificazione, aiutando a raggiungere l'obiettivo principale.
+
+### Safety Constraints
+**Safety Constraints** specificano condizioni che devono essere sempre soddisfatte per garantire che il piano risultante sia sicuro e valido.
+
+### Expression Evaluation
+**Expression Evaluation** permette di valutare espressioni aritmetiche e logiche durante la pianificazione, fornendo maggiore flessibilità nel definire condizioni e effetti.
+
+### Fluents
+**Fluents** sono variabili che possono cambiare valore nel tempo e sono usate per rappresentare proprietà dinamiche del dominio.
+
+### Open World
+**Open World** assume che non tutte le informazioni sul dominio siano conosciute a priori, permettendo la possibilità di scoprire nuove informazioni durante la pianificazione.
+
+### True Negation
+**True Negation** permette di usare la negazione esplicita nelle precondizioni e negli effetti, consentendo di esprimere direttamente che una certa condizione deve essere falsa.
+
+### ADL
+**ADL (Action Description Language)** estende STRIPS includendo supporto per precondizioni disgiuntive, quantificatori, effetti condizionali, e altre caratteristiche avanzate.
+
+### UCPOP
+**UCPOP (Universal Conditional Partial Order Planner)** è un algoritmo di pianificazione che supporta precondizioni condizionali e parzialmente ordinate.
+
+### Numeric Fluents
+**Numeric Fluents** sono variabili numeriche che possono essere incrementate o decrementate dalle azioni, permettendo la modellazione di quantità variabili come risorse o tempo.
+
+### Durative Actions
+**Durative Actions** permettono di rappresentare azioni che hanno una durata temporale, specificando effetti che si verificano all'inizio, durante, e alla fine dell'azione.
+
+### Durative Inequalities
+**Durative Inequalities** permettono di esprimere vincoli sulle durate delle azioni, ad esempio specificando che un'azione deve durare almeno un certo tempo o non più di un certo tempo.
+
+### Continuous Effects
+**Continuous Effects** rappresentano effetti che si verificano continuamente durante la durata di un'azione, come il consumo di carburante mentre un veicolo è in movimento.
+
+### Negative Preconditions
+**Negative Preconditions** permettono di specificare che una condizione deve essere falsa affinché un'azione sia eseguibile.
+
+Questi requisiti offrono una vasta gamma di strumenti per rappresentare in modo preciso e dettagliato le caratteristiche di un dominio di pianificazione e le azioni possibili al suo interno.
