@@ -1,5 +1,5 @@
 (define (domain jugPouring)
-    (:requirements :typing :numeric-fluents)
+    (:requirements :typing :fluents)
     (:types jug)
 
     (:functions
@@ -7,12 +7,12 @@
         (capacity ?j - jug)
     )
 
-    (:action empty
+    (:action pour
         :parameters (?jug1 ?jug2 - jug)
         :precondition (>= (- (capacity ?jug2) (amount ?jug2)) (amount ?jug1))
         :effect (and 
             (assign (amount ?jug1) 0)
-            (assign (amount ?jug2) (+ (amount ?jug1) (amount ?jug2)))
+            (increase (amount ?jug2) (amount ?jug1))
         )
     )
 )
