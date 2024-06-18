@@ -1,5 +1,5 @@
-(define (domain jug-pouring)
-    (:requirements :typing :fluents)
+(define (domain jugPouring)
+    (:requirements :typing :numeric-fluents)
     (:types jug)
 
     (:functions

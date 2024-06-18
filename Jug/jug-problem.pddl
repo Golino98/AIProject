@@ -1,5 +1,5 @@
-(define (problem jug-problem)
-    (:domain jug-pouring)
+(define (problem jug)
+    (:domain jugPouring)
     (:objects
         jug1 jug2 - jug
     )
